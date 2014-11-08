@@ -26,6 +26,7 @@ var ace = {
 		if(ace.wathID){
 			navigator.accelerometer.clearWatch(ace.wathID);
 			ace.wathID = null;
+			$('#acelerometro h2').html('Detenido');
 		}
 	},
 	wathID: null,
