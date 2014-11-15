@@ -16,9 +16,9 @@ var fn = {
 			$('#acelerometro .individual li').eq(1).tap(ace.stop);
 			
 			//iniciar brujula
-		$('#brujula .individual li').eq(0).tap(bru.start);
+		$('#brujula .individual li').eq(2).tap(bru.start);
 		//detener brujula
-			$('#brujula .individual li').eq(1).tap(bru.stop);
+			$('#brujula .individual li').eq(3).tap(bru.stop);
 	}
 };
 
