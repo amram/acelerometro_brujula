@@ -64,14 +64,14 @@ var bru = {
 		}
 	},
 	wathID: null,
-	success: function(b){
+	success: function(heading){
 		
 		
 		var element = document.getElementById('compass_text');
-        element.innerHTML = 'Grados Norte: ' + b.magneticHeading + '<br />' +
-                            'Timestamp: ' + b.timestamp + '<br />';
+        element.innerHTML = 'Grados Norte: ' + heading.magneticHeading + '<br />' +
+                            'Timestamp: ' + heading.timestamp + '<br />';
 	 var arrow = $('#arrow');
-        var arrowOrientation = 360 - b.magneticHeading;
+        var arrowOrientation = 360 - heading.magneticHeading;
         arrow.css('-webkit-transform','rotate(' + arrowOrientation + 'deg)');
 	},
 	error: function(){
