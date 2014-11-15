@@ -52,7 +52,7 @@ var bru = {
 	start: function(){
 			if(bru.wathID == null)
 			 
-		bru.wathID =navigator.compass.watchAcceleration(bru.success,bru.error,{frequency:800});
+		bru.wathID =navigator.compass.watchHeading(bru.success,bru.error,{frequency:800});
 		
 	},
 	stop: function(){
