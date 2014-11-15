@@ -63,9 +63,9 @@ var bru = {
 		}
 	},
 	wathID: null,
-	success: function(a){
+	success: function(b){
 	 var arrow = $('#arrow');
-        var arrowOrientation = 360 - heading.magneticHeading;
+        var arrowOrientation = 360 - b.magneticHeading;
         arrow.css('-webkit-transform','rotate(' + arrowOrientation + 'deg)');
 	},
 	error: function(){
