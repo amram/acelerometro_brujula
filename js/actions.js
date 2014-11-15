@@ -14,6 +14,11 @@ var fn = {
 		$('#acelerometro .individual li').eq(0).tap(ace.start);
 		//detener acelerometro
 			$('#acelerometro .individual li').eq(1).tap(ace.stop);
+			
+			//iniciar brujula
+		$('#brujula .individual li').eq(0).tap(bru.start);
+		//detener brujula
+			$('#brujula .individual li').eq(1).tap(bru.stop);
 	}
 };
 
@@ -40,5 +45,39 @@ var ace = {
 		alert('Error en el acelerometro');
 	}
 };
+
+/////////////////////////////////////////////////////////////////////////BRUJULA
+
+var bru = {
+	start: function(){
+			if(bru.wathID == null)
+			 
+		bru.wathID =navigator.compass.watchAcceleration(bru.success,bru.error,{frequency:800});
+		
+	},
+	stop: function(){
+		if(bru.wathID){
+			navigator.compass.clearWatch(bru.wathID);
+			bru.wathID = null;
+			$('#brujula h2').html('Detenido');
+		}
+	},
+	wathID: null,
+	success: function(a){
+	 var arrow = $('#arrow');
+        var arrowOrientation = 360 - heading.magneticHeading;
+        arrow.css('-webkit-transform','rotate(' + arrowOrientation + 'deg)');
+	},
+	error: function(){
+		alert('Error en la brujula');
+	}
+};
+
+
+
+
+
+
+
 
 $(fn.device);
